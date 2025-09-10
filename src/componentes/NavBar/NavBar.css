@@ -1,0 +1,19 @@
+header {
+    background-color: #333333; 
+    color: #036f80; 
+    padding: 1.5rem 2rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(2, 64, 97, 0.54); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+li{
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
