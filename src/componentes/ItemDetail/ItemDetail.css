@@ -1,0 +1,6 @@
+.contenedorItem{
+    align-items: center;
+    border: 1px solid black ;
+    margin: 8rem;
+    border-radius: 10px;
+}
