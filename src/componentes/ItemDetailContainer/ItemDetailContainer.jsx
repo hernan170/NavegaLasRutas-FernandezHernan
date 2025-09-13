@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
 
     useEffect(()=>{
         getUnProducto(idItem).then(respuesta => setProducto(respuesta))
-    },[idItem])
+    }, [idItem])
 
   return (
     <div>
