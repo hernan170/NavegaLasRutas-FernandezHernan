@@ -1,20 +1,26 @@
 //1) Importo useState y CreateContext.
 
-import { useState, createContext, Children} from 'react';
+import { useState, createContext} from "react";
 
 
 //2) Creo el contexto.
-export const CarritoProvider = createContext ({
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const CarritoContext = createContext ({
     carrito: [],
     total: 0,
     cantidadTotal: 0
 });
 
-export const CarritoContext = ({Children}) => {
+export const CarritoProvider = ({children}) => {
+    
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
     const [cantidadTotal, setCantidadTotal] = useState(0)
-}
+
+//Verificamos por consola si se agrega al carrito.
+console.log(carrito)
+
 
 const agregarAlCarrito = (item, cantidad) =>{
     const productoExistente = carrito.find(prod => prod.item.id === item.id)
@@ -27,7 +33,7 @@ const agregarAlCarrito = (item, cantidad) =>{
         //carrito y agregar  un nuevo objeto que representa el productoa gregado.
         
     } else {
-        const carritoActualizado = carrito.map( prod => {
+        const carritoActualizado = carrito.map(prod => {
             if(prod.item.id === item.id){
                 return {...prod, cantidad: prod.cantidad + cantidad}
             } else {
@@ -47,8 +53,8 @@ const eliminarProducto = (id) => {
     const carritoActualizado = carrito.filter(prod => prod.item.id !== id)
 
     setCarrito(carritoActualizado)
-    setCantidadTotal(prev => prev - productoEliminqado.cantidad)
-    setTotal (prev => prev - (productoEliminado.item.precio*productoEliminado.cantidad))
+    setCantidadTotal(prev => prev - productoEliminado.cantidad)
+    setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad))
 }
 
 //Funcion para vaciar el carrito.
@@ -61,8 +67,11 @@ const vaciarCarrito = () => {
 
 return(
     <CarritoContext.Provider value={{carrito, total, cantidadTotal, agregarAlCarrito, eliminarProducto, vaciarCarrito}}>
-        {Children} 
+        {children} 
     </CarritoContext.Provider>
 
 )
+
+}
+
 //{children} Para que cualquier componente pueda acceder a la informacion.

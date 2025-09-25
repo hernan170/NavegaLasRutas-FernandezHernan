@@ -3,13 +3,28 @@ import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css"
 import { useState } from "react"
 
+import { CarritoContext } from "../../context/CarritoContext"
+import { useContext } from "react"
+
+
 const ItemDetail = ({id, nombre, precio , img, stock}) => {
-
+  
+  //Se crea un estado local con la cantidad de productos agregados.
+  
   const [agregarCantidad, setAgregarCantidad] = useState(0)
+  
+  
+  const {agregarAlCarrito} = useContext(CarritoContext)
 
+  //Creamos una funcion manejadora de la cantidad.
+  
   const manejadorCantidad = (cantidad) =>{
     setAgregarCantidad(cantidad);
-    console.log("Productos agregados: " + cantidad)
+    /*console.log("Productos agregados: " + cantidad)*/
+    
+    //ahora creo un objeto con el item y la cantidad.
+    const item= {id, nombre, precio}
+    agregarAlCarrito(item, cantidad)
   }
 
   return (
@@ -25,8 +40,7 @@ const ItemDetail = ({id, nombre, precio , img, stock}) => {
            facere sint, a fuga nostrum ad!
         </p>
         {
-          agregarCantidad > 0 ?(<Link to="/cart">Terminar Compra</Link>) 
-          : <ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>
+          agregarCantidad > 0 ?(<Link to="/cart">Terminar Compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>)
         }
     </div>
   )

@@ -22,3 +22,124 @@ h1{
     flex-direction: row;
     align-items: center;
 }
+/* Estilos generales para el header de la navegación */
+.navbar-header {
+    background-color: #282c34; /* Fondo oscuro */
+    padding: 1rem 2rem; /* Espaciado interno */
+    display: flex; /* Usamos flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia logo, nav y cartwidget */
+    align-items: center; /* Centra verticalmente los elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos para el logo */
+.navbar-logo-link {
+    display: flex; /* Asegura que la imagen esté bien alineada si hay texto */
+    align-items: center;
+    margin-right: 1.5rem; /* Espacio a la derecha del logo */
+}
+
+.navbar-logo {
+    width: 3.5rem; /* Tamaño más manejable para el logo */
+    height: auto;
+    border-radius: 50%; /* Si quieres que el logo sea redondo */
+    transition: transform 0.3s ease; /* Pequeña animación al pasar el ratón */
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+}
+
+/* Estilos para la navegación (lista de enlaces) */
+.navbar-nav {
+    flex-grow: 1; /* Permite que ocupe el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra los enlaces en el medio */
+}
+
+.navbar-list {
+    list-style: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los ítems de la lista en una fila */
+    gap: 1.5rem; /* Espacio entre los enlaces */
+}
+
+.navbar-item {
+    /* Estilos específicos para cada ítem de la lista si es necesario */
+}
+
+.navbar-link {
+    color: #61dafb; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quita el subrayado */
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.navbar-link:hover {
+    background-color: #444; /* Fondo al pasar el ratón */
+    color: #fff; /* Texto blanco al pasar el ratón */
+}
+
+/* -------------------------------------- */
+/* Estilos Responsive            */
+/* -------------------------------------- */
+
+/* Para pantallas medianas (ej. tablets, 768px o menos) */
+@media (max-width: 768px) {
+    .navbar-header {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        padding: 1rem;
+    }
+
+    .navbar-logo-link {
+        margin-right: 0; /* Quita el margen a la derecha */
+        margin-bottom: 1rem; /* Añade margen inferior al logo */
+    }
+
+    .navbar-nav {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-bottom: 1rem; /* Espacio antes del CartWidget */
+    }
+
+    .navbar-list {
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        gap: 0.5rem; /* Menos espacio entre enlaces */
+        width: 100%;
+        align-items: center; /* Centra los enlaces apilados */
+    }
+
+    .navbar-item {
+        width: 100%;
+        text-align: center; /* Centra el texto de cada ítem */
+    }
+
+    .navbar-link {
+        display: block; /* Hace que el enlace ocupe todo el ancho del ítem */
+        padding: 0.8rem 0; /* Más relleno vertical */
+    }
+}
+
+/* Para pantallas pequeñas (ej. móviles, 480px o menos) */
+@media (max-width: 480px) {
+    .navbar-header {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .navbar-logo {
+        width: 3rem; /* Logo un poco más pequeño en móviles */
+    }
+
+    .navbar-list {
+        gap: 0.3rem; /* Aún menos espacio */
+    }
+
+    .navbar-link {
+        font-size: 1rem; /* Texto un poco más pequeño */
+        padding: 0.6rem 0;
+    }
+}

@@ -6,9 +6,11 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
   
   return (
+    
     <header>
       <Link to="/">
-        <h1><img style={{width:"4rem"}} src="./public/img/pelota1.jpg" alt="logo de una pelota de futbol" />Tienda Futbol</h1>
+        <img style={{width:"4rem"}} src="./public/img/pelota1.jpg" alt="logo de una pelota de futbol" />
+        
       </Link>
         <nav>
             <ul>
