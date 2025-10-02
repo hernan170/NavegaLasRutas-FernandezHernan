@@ -14,7 +14,7 @@ const Checkout = () => {
   const [error, setError] = useState("");
   const [ordenId, setOrdenId] = useState("");
 
-  const { carrito, vaciarCarrito, total, totalCantidad } =
+  const { carrito, vaciarCarrito, total } =
   useContext(CarritoContext);
 
   //funciiones y validacion
@@ -85,6 +85,7 @@ const Checkout = () => {
   };
 
   return (
+    
     <div>
       <h2>Checkout:</h2>
       <form onSubmit={manejadorFormulario}>
@@ -106,14 +107,11 @@ const Checkout = () => {
         </div>
         <div>
           <label htmlFor="">Email Confirmacion</label>
-          <input
-            type="email"
-            onChange={(e) => setEmailConfirmacion(e.target.value)}
-          />
-        </div>
-
-        {error && <p style={{ color: "red" }}> {error} </p>}
-
+          <input type="email" onChange={(e) => setEmailConfirmacion(e.target.value)}
+          />  
+        </div>  
+       
+        {error && <p style={{ color: "red" }}> {error} </p>}  
         <button type="submit">Confirmar Compra</button>
 
         {ordenId && (
@@ -121,7 +119,8 @@ const Checkout = () => {
             {" "}
             Gracias por tu compra!! Tu numero de orden es: {ordenId}
           </strong>
-        )}
+
+       )}
       </form>
     </div>
   );

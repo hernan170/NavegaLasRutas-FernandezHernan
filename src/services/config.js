@@ -28,6 +28,7 @@ const misProductos = [
 
 import{collection, doc, writeBatch} from "firebase/firestore";
 
+// eslint-disable-next-line no-unused-vars
 const subirProductos = async () => {
     const batch = writeBatch(db);
     const productosRef = collection(db, "productos");

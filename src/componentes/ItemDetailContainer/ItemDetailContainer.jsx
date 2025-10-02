@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-/*import { getUnProducto } from "../../Asycmocks";*/
 import { db } from "../../services/config";
 import { getDoc, doc } from "firebase/firestore";
 import ItemDetail from "../ItemDetail/ItemDetail";

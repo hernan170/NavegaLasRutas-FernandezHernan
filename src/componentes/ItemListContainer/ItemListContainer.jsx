@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react"
-/*import { getProductos, getProductosPorCategoria } from "../../Asycmocks" */
 import {db} from "../../services/config"
 import {collection, getDocs, query, where} from "firebase/firestore"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
+import Loader from "../Loader/Loader"
 
 
 const ItemListContainer = () => {
   
   const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(false)
+  
   const {idCategoria} = useParams()
 
     useEffect(()=>{
+      setLoading(true)
       const misProductos = idCategoria ? query(collection(db, "productos"), where("idCat", "==", idCategoria)) : collection(db, 
         "productos")
         getDocs(misProductos)
@@ -23,20 +26,18 @@ const ItemListContainer = () => {
           setProductos(nuevosProductos)
         })
           .catch(error => console.log(error))
+          .finally(()=>{
+            console.log("Finalizado")
+            setLoading(false)
+          })
     },[idCategoria])
 
-  /*useEffect(()=>{
-    const funcionProductos = idCategoria ? getProductosPorCategoria : getProductos;
-    funcionProductos(idCategoria)
-    .then(res => setProductos(res))
-  }, [idCategoria])*/
-   
-  
-  
+    
   return (
     <>
     <h2 style={{textAlign:"center"}}>Mis Productos</h2>
-    <ItemList productos = {productos}/>
+    { loading ? <Loader/> : <ItemList productos = {productos}/> }
+    
     
     </>
   )

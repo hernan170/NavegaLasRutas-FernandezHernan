@@ -5,6 +5,7 @@ import { useState } from "react"
 
 import { CarritoContext } from "../../context/CarritoContext"
 import { useContext } from "react"
+import { toast } from "react-toastify"
 
 
 const ItemDetail = ({id, nombre, precio , img, stock}) => {
@@ -20,11 +21,12 @@ const ItemDetail = ({id, nombre, precio , img, stock}) => {
   
   const manejadorCantidad = (cantidad) =>{
     setAgregarCantidad(cantidad);
-    /*console.log("Productos agregados: " + cantidad)*/
+    
     
     //ahora creo un objeto con el item y la cantidad.
     const item= {id, nombre, precio}
     agregarAlCarrito(item, cantidad)
+    toast.success("su compra fue enviada al carrito", {autoClose: 1000, theme: "colored", position: "bottom-center"})
   }
 
   return (
