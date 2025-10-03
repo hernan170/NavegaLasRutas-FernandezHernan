@@ -1,9 +1,4 @@
-//1) Importo useState y CreateContext.
-
 import { useState, createContext} from "react";
-
-
-//2) Creo el contexto.
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const CarritoContext = createContext ({
@@ -18,8 +13,7 @@ export const CarritoProvider = ({children}) => {
     const [total, setTotal] = useState(0)
     const [cantidadTotal, setCantidadTotal] = useState(0)
 
-//Verificamos por consola si se agrega al carrito.
-console.log(carrito)
+
 
 
 const agregarAlCarrito = (item, cantidad) =>{
@@ -29,8 +23,7 @@ const agregarAlCarrito = (item, cantidad) =>{
         setCarrito(prev => [...prev,{item, cantidad}])
         setCantidadTotal(prev => prev + cantidad)
         setTotal(prev => prev + (item.precio * cantidad))
-        //sintaxis:prev => [...prev,], {item, cantidad}]) se utiliza para crear un nuevo array a partir del estado anterior del
-        //carrito y agregar  un nuevo objeto que representa el productoa gregado.
+        
         
     } else {
         const carritoActualizado = carrito.map(prod => {
@@ -74,4 +67,4 @@ return(
 
 }
 
-//{children} Para que cualquier componente pueda acceder a la informacion.
+

@@ -22,19 +22,19 @@ const Checkout = () => {
   const manejadorFormulario = (event) => {
     event.preventDefault();
 
-    //Verificamos que los campos esten completo:
+    
     if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
       setError("Por favor completa todos los campos");
       return;
     }
 
-    //validamos que los campos de email cincida:
+   
     if (email !== emailConfirmacion) {
       setError("Los campos de email no coinciden.");
       return;
     }
 
-    //1) Creamos un objeto con todos los datos de la orden de compra:
+    
 
     const orden = {
       items: carrito.map((producto) => ({
@@ -50,9 +50,7 @@ const Checkout = () => {
       email,
     };
 
-    //////////////////////////////
-
-    //codigo para que ejecute varias promesas en paralelo, por un lado que actualice el stock de productos y por el otro lado que genere una oprden de compra. Vamos a usar Promise.All
+   
 
     Promise.all(
       orden.items.map(async (productoOrden) => {
@@ -81,7 +79,7 @@ const Checkout = () => {
         setError("No se puede actualizar el stock")
     })
 
-    //2) Guardar la orden en la base de datos
+   
   };
 
   return (
