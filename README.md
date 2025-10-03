@@ -1,14 +1,25 @@
-# React + Vite
+# Tienda Futbol
+Este es un proyecto ecommerce basico que se utiliza para el curso de React JS. La aplicacion permite ver una lista de productos de indumentaria, articulos deportivos y realizar compras en linea. Los productos y las ordenes de compra se almacenan en Firebase-Firestore.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tecnologias utilizadas:
+-Vite
+-React
+-React-Router-DOM
+-Firebase
+-Toastify
+-Bootstrap 5.3.8
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Funcionalidades
+-Ver una lista de productos disponibles en stock
+-Agregar productos al carrito de compras
+-Ver el carrito de compras
+-Realizar una orden de compra
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# -CreaTuLanding1-FernandezHernan-
-# -CreaTuLanding2-FernandezHernan-
+## Imagen
+(/public/img/pelota1.jpg) 
+
+
+## Dominio de sitio
+
