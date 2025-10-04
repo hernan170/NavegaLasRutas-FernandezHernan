@@ -17,9 +17,6 @@ Este es un proyecto ecommerce basico que se utiliza para el curso de React JS. L
 -Realizar una orden de compra
 
 
-## Imagen
-(/public/img/pelota1.jpg) 
+ ## Dominio de sitio
 
-
-## Dominio de sitio
-
+https://tiendafutbol.netlify.app/
