@@ -12,7 +12,7 @@ const {cantidadTotal} = useContext(CarritoContext)
   return (
     <div>
       <Link to="/cart">
-        <img className="imgCarrito" src= "./public/img/carrito2.jpg" alt="imagen de un carrito de compras" />
+        <img className="imgCarrito" src= "/img/carrito2.jpg" alt="imagen de un carrito de compras" />
         
       {
         cantidadTotal > 0 && <strong>{cantidadTotal}</strong>

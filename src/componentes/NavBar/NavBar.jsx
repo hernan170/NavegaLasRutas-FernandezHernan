@@ -9,7 +9,7 @@ const NavBar = () => {
     
     <header>
       <Link to="/">
-        <img style={{width:"4rem"}} src="./public/img/pelota1.jpg" alt="logo de una pelota de futbol" />
+        <img style={{width:"4rem"}} src="/img/pelota1.jpg" alt="logo de una pelota de futbol" />
         
       </Link>
         <nav>
