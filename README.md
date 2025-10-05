@@ -20,3 +20,4 @@ Este es un proyecto ecommerce basico que se utiliza para el curso de React JS. L
  ## Dominio de sitio
 
 https://tiendafutbol.netlify.app/
+https://tiendafutbol.vercel.app/
